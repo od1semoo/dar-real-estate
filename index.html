@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -107,6 +107,142 @@
   <footer><a class="logo" href="#">دار<span>.</span></a>
     <p>اختيارك الصح.. بداية حكاية.</p><span>© 2026 دار العقارية</span>
   </footer>
+  <script src="script.js"></script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دار العقارية | ابحث عن عقار أحلامك</title>
+
+  <!-- استدعاء خط Cairo الفاخر من جوجل -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ربط ملف الـ CSS الخارجي -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- الهيدر (شريط التنقل العلوي) -->
+  <header>
+    <div class="logo">دار<span>.التميز</span></div>
+    <nav>
+      <a href="#hero">الرئيسية</a>
+      <a href="#properties">العقارات</a>
+      <a href="#trust">لماذا نحن؟</a>
+    </nav>
+  </header>
+
+  <!-- واجهة الهيرو الرئيسية (Hero Section) -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>ابحث عن مستقبلك العقاري معنا</h1>
+      <p>مجموعتنا المختارة من العقارات الفاخرة تلبي تطلعاتك الاستثمارية والسكنية</p>
+
+      <!-- شريط البحث والفلترة المتقدم الفوري -->
+      <div class="search-container">
+        <div class="search-group">
+          <label for="searchLocation">المنطقة</label>
+          <select id="searchLocation" onchange="filterProperties()">
+            <option value="all">كل المناطق</option>
+            <option value="التجمع الخامس">التجمع الخامس</option>
+            <option value="الشيخ زايد">الشيخ زايد</option>
+            <option value="العاصمة الإدارية">العاصمة الإدارية</option>
+          </select>
+        </div>
+        <div class="search-group">
+          <label for="searchType">نوع الوحدة</label>
+          <select id="searchType" onchange="filterProperties()">
+            <option value="all">كل الأنواع</option>
+            <option value="شقة">شقة فاخرة</option>
+            <option value="فيلا">فيلا مستقلة</option>
+            <option value="تاون هاوس">تاون هاوس</option>
+          </select>
+        </div>
+        <div class="search-group">
+          <label for="searchPrice">الحد الأقصى للسعر (ج.م)</label>
+          <input type="number" id="searchPrice" placeholder="مثال: 8000000" oninput="filterProperties()">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم عرض كروت العقارات (Properties Grid) -->
+  <section id="properties" class="properties-section">
+    <h2 class="section-title">العقارات المتاحة حالياً</h2>
+    <div class="grid-container" id="propertiesGrid">
+      <!-- الكروت سيتم إنشاؤها ديناميكياً بواسطة الجافاسكريبت هنا -->
+    </div>
+  </section>
+
+  <!-- قسم بناء الثقة وآراء العملاء (Trust Section) -->
+  <section id="trust" class="trust-section">
+    <h2>لماذا يثق بنا العملاء؟</h2>
+    <div class="testimonials">
+      <div class="testi-card">
+        <p>"أفضل تجربة شراء عقار، التزام تام بالوقت ومصداقية كاملة في عرض الأسعار والتسهيلات المتاحة."</p>
+        <div class="client-name">أحمد مصطفى</div>
+      </div>
+      <div class="testi-card">
+        <p>"سهولة مرعبة في التواصل عبر واتساب، تم ترتيب المعاينة والتعاقد بسلاسة شديدة!"</p>
+        <div class="client-name">م. سارة المهدي</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- النافذة المنبثقة الديناميكية لتفاصيل العقار (Modal Popup) -->
+  <div class="modal" id="propertyModal">
+    <div class="modal-content">
+      <!-- زر إغلاق النافذة -->
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+
+      <!-- معرض صور العقار المتنقل -->
+      <div class="modal-slider" id="modalSlider"></div>
+
+      <div class="modal-body">
+        <h2 id="modalTitle"></h2>
+        <h3 id="modalPrice"></h3>
+        <p id="modalDescription"></p>
+
+        <!-- تفاصيل العقار الفنية -->
+        <div class="modal-meta">
+          <div><strong>المساحة:</strong> <span id="modalArea"></span></div>
+          <div><strong>الموقع:</strong> <span id="modalLocation"></span></div>
+          <div><strong>نظام السداد:</strong> <span id="modalPayment"></span></div>
+          <div><strong>نوع الوحدة:</strong> <span id="modalType"></span></div>
+        </div>
+
+        <!-- نموذج حجز المعاينة الذكي المتصل بالواتساب -->
+        <div class="booking-form">
+          <h4>حجز معاينة واستفسار سريع</h4>
+          <div class="input-group">
+            <input type="text" id="clientName" class="form-input" placeholder="اسمك الكريم" required>
+          </div>
+          <div class="input-group">
+            <input type="tel" id="clientPhone" class="form-input" placeholder="رقم هاتفك (واتساب)" required>
+          </div>
+          <button class="submit-btn" onclick="sendToWhatsapp()">
+            إرسال الطلب وتواصل عبر واتساب سريعاً 💬
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- التذييل (Footer) -->
+  <footer>
+    <p>جميع الحقوق محفوظة © دار العقارية 2026</p>
+  </footer>
+
+  <!-- ربط ملف الـ JavaScript الخارجي -->
   <script src="script.js"></script>
 </body>
 
