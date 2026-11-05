@@ -1,5 +1,5 @@
 // غيّر الرقم إلى رقم واتسابك بصيغة دولية بدون + أو أصفار البداية.
-const WHATSAPP_NUMBER = "201142749045";
+const WHATSAPP_NUMBER = "01142749045";
 const menuButton = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
 menuButton?.addEventListener("click", () => nav.classList.toggle("open"));
