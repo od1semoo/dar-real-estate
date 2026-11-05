@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="دار العقارية - نساعدك تلاقي بيتك المناسب بخطوات سهلة.">
+  <title>دار | بيتك يبدأ من هنا</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">دار<span>.</span></a>
+    <button class="menu-toggle" aria-label="فتح القائمة">☰</button>
+    <nav class="nav"><a href="#properties">الوحدات</a><a href="#about">عن الشركة</a><a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="header-cta" href="#contact">اطلب استشارة</a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">اختار بيتك بثقة</span>
+        <h1>مش مجرد بيت..<br><em>دي بداية حكاية.</em></h1>
+        <p>بنساعدك تلاقي الوحدة المناسبة لاحتياجاتك وميزانيتك، بخيارات واضحة وخطوات سهلة.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#properties">اكتشف الوحدات</a><a class="text-link"
+            href="#contact">خلينا نتكلم ←</a></div>
+        <div class="trust"><strong>+250</strong><span>عميل بدأوا حكايتهم معانا</span></div>
+      </div>
+      <div class="hero-image">
+        <div class="image-note"><b>اختيارك الصح</b><span>بيبدأ من هنا</span></div>
+      </div>
+    </section>
+    <section class="section" id="properties">
+      <div class="section-heading">
+        <div><span class="eyebrow">اختياراتنا</span>
+          <h2>وحدات تستحق تشوفها</h2>
+        </div>
+        <p>اختار النوع اللي يناسب خطتك.</p>
+      </div>
+      <div class="filters"><button class="filter active" data-filter="all">الكل</button><button class="filter"
+          data-filter="apartment">شقق</button><button class="filter" data-filter="villa">فيلات</button><button
+          class="filter" data-filter="coast">ساحلي</button></div>
+      <div class="property-grid">
+        <article class="property" data-category="apartment"><img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"
+            alt="شقة بتصميم عصري">
+          <div class="property-body"><span class="tag">شقق سكنية</span>
+            <h3>شقة بتصميم عصري</h3>
+            <p>القاهرة الجديدة · 145 متر</p>
+            <div class="property-foot"><b>من 4.2 مليون جنيه</b><a href="#contact">استفسر ←</a></div>
+          </div>
+        </article>
+        <article class="property" data-category="villa"><img
+            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=85"
+            alt="فيلا بحديقة">
+          <div class="property-body"><span class="tag">فيلات</span>
+            <h3>فيلا بحديقة خاصة</h3>
+            <p>مدينة المستقبل · 260 متر</p>
+            <div class="property-foot"><b>من 12 مليون جنيه</b><a href="#contact">استفسر ←</a></div>
+          </div>
+        </article>
+        <article class="property" data-category="coast"><img
+            src="https://images.unsplash.com/photo-1499798288271-6f1b3e3b9c9d?auto=format&fit=crop&w=900&q=85"
+            alt="منزل بإطلالة بحرية">
+          <div class="property-body"><span class="tag">ساحلي</span>
+            <h3>إقامة على البحر</h3>
+            <p>الساحل الشمالي · 110 متر</p>
+            <div class="property-foot"><b>من 6.8 مليون جنيه</b><a href="#contact">استفسر ←</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about-photo"></div>
+      <div><span class="eyebrow">ليه دار؟</span>
+        <h2>قرار كبير.. محتاج حد يسمعك.</h2>
+        <p>مش بنعرض عليك وحدات وخلاص. بنفهم احتياجاتك، ونقارن معاك الاختيارات، ونوضح التفاصيل قبل ما تاخد قرارك.</p>
+        <ul>
+          <li>✓ اختيارات متنوعة تناسب ميزانيتك</li>
+          <li>✓ تفاصيل واضحة من أول مكالمة</li>
+          <li>✓ متابعة معاك خطوة بخطوة</li>
+        </ul><a class="btn btn-dark" href="#contact">اتكلم مع مستشار</a>
+      </div>
+    </section>
+    <section class="contact section" id="contact">
+      <div><span class="eyebrow">خلينا نبدأ</span>
+        <h2>احكيلنا بتدور على إيه؟</h2>
+        <p>سيب بياناتك وهنفتح واتساب برسالة جاهزة لفريق المبيعات.</p>
+      </div>
+      <form class="lead-form" data-message="طلب استفسار عقاري">
+        <label>الاسم<input name="name" required placeholder="اسمك بالكامل"></label>
+        <label>رقم الموبايل<input name="phone" required type="tel" placeholder="01xxxxxxxxx"></label>
+        <label>نوع الوحدة<select name="interest">
+            <option>شقة</option>
+            <option>فيلا</option>
+            <option>وحدة ساحلية</option>
+            <option>لسه بحدد</option>
+          </select></label>
+        <button class="btn btn-gold" type="submit">ابعت طلبك على واتساب</button><small class="form-note"
+          aria-live="polite"></small>
+      </form>
+    </section>
+  </main>
+  <footer><a class="logo" href="#">دار<span>.</span></a>
+    <p>اختيارك الصح.. بداية حكاية.</p><span>© 2026 دار العقارية</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
